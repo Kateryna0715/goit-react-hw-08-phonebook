@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 const FormRegistration = ({ register }) => {
   const handleSubmit = e => {
     e.preventDefault();
+    const form = e.target;
+    const newUser = {
+      name: form.elements.name.value,
+      email: form.elements.email.value,
+      password: form.elements.password.value,
+    };
+    register(newUser);
+    form.reset();
   };
   return (
     <div className="card p-5 mx-auto" style={{ width: 500 }}>

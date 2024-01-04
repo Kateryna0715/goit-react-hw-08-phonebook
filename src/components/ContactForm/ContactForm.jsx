@@ -1,7 +1,7 @@
 import CSS from './index.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
+import { addContact } from '../../redux/contacts/operations';
 import { Notify } from 'notiflix';
 
 const ContactForm = () => {
@@ -13,7 +13,7 @@ const ContactForm = () => {
 
     const form = e.target;
     const name = form.elements.name.value;
-    const phone = form.elements.number.value;
+    const number = form.elements.number.value;
 
     const isExist = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -23,7 +23,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact({ name, phone }));
+    dispatch(addContact({ name, number }));
 
     form.reset();
   };

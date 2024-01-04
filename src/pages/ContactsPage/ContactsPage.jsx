@@ -9,9 +9,9 @@ import {
   selectContacts,
   selectError,
   selectIsLoading,
-} from '../../redux/selectors';
+} from '../../redux/contacts/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from '../../redux/operations';
+import { fetchContacts } from '../../redux/contacts/operations';
 
 const ContactsPage = () => {
   const contacts = useSelector(selectContacts);

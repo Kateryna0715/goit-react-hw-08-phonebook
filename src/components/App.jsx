@@ -9,10 +9,6 @@ const RegistrationPage = lazy(() =>
   import('pages/RegistrationPage/RegistrationPage')
 );
 
-// const MovieDetailsPage = lazy(() =>
-//   import('pages/MovieDetailsPage/MovieDetailsPage')
-// );import ContactsPage from './../pages/ContactsPage/ContactsPage';
-
 const App = () => {
   return (
     <Routes>
@@ -22,10 +18,6 @@ const App = () => {
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="registration" element={<RegistrationPage />} />
-        {/* <Route path="movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Review />} />
-        </Route> */}
 
         <Route path="*" element={<Navigate to="/" />} />
       </Route>

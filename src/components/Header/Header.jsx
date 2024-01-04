@@ -25,13 +25,13 @@ const Header = () => {
           </ul>
           <ul className={CSS.headerList}>
             <li>
-              <NavLink to="/login" className={CSS.headerLink}>
-                Log In
+              <NavLink to="/registration" className={CSS.headerLink}>
+                Register
               </NavLink>
             </li>
             <li>
-              <NavLink to="/registration" className={CSS.headerLink}>
-                Registration
+              <NavLink to="/login" className={CSS.headerLink}>
+                Log In
               </NavLink>
             </li>
           </ul>
