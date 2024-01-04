@@ -1,0 +1,27 @@
+.listElement {
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 2px solid rgb(216, 216, 231);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnDelete {
+  margin-left: 12px;
+  background-color: #5d95ef;
+  border: 1px solid #5d95ef;
+  transition: transform 0.3s ease 0s, box-shadow 0.3s ease 0s,
+    background-color 0.3s ease 0s;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+}
