@@ -1,7 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux';
 import CSS from './index.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { logOut } from '../../redux/auth/operations';
 
 const Header = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    isLoggedIn ? dispatch(logOut()) : navigate('/login');
+  };
   return (
     <>
       <div className={CSS.headerContainer}>
@@ -30,9 +39,12 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/login" className={CSS.headerLink}>
+              <button onClick={handleClick}>
+                {isLoggedIn ? 'Log Out' : 'Log In'}
+              </button>
+              {/* <NavLink to="/login" className={CSS.headerLink}>
                 Log In
-              </NavLink>
+              </NavLink> */}
             </li>
           </ul>
         </nav>

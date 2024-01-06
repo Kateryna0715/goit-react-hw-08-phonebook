@@ -51,6 +51,7 @@ const FormRegistration = () => {
             name="email"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            autocomplete="on"
           />
           <div id="emailHelp">
             We'll never share your email with anyone else.
@@ -58,7 +59,12 @@ const FormRegistration = () => {
         </div>
         <div>
           <label htmlFor="exampleInputName">Name</label>
-          <input type="text" name="name" id="exampleInputName" />
+          <input
+            type="text"
+            name="name"
+            id="exampleInputName"
+            autocomplete="on"
+          />
         </div>
         <div>
           <label htmlFor="exampleInputPassword1">Password</label>
