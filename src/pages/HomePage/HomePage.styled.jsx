@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-export const Title = styled.div`
+export const TitleContainer = styled.div`
+  min-height: calc(100vh - 300px);
   display: flex;
-  gap: 10px;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
-  font-style: italic;
-  height: 50vh;
+`;
+
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 52px;
 `;

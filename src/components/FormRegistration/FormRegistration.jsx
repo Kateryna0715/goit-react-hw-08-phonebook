@@ -45,30 +45,44 @@ const FormRegistration = () => {
           go home
         </Link>
         <div>
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="inputEmail">Email address</label>
           <input
             type="email"
             name="email"
-            id="exampleInputEmail1"
+            id="inputEmail"
             aria-describedby="emailHelp"
-            autocomplete="on"
+            placeholder="Enter your email address"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email address"
+            required
           />
           <div id="emailHelp">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div>
-          <label htmlFor="exampleInputName">Name</label>
+          <label htmlFor="inputName">Name</label>
           <input
             type="text"
             name="name"
-            id="exampleInputName"
-            autocomplete="on"
+            id="inputName"
+            placeholder="Enter your name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer"
+            required
           />
         </div>
         <div>
           <label htmlFor="exampleInputPassword1">Password</label>
-          <input name="password" type="password" id="exampleInputPassword1" />
+          <input
+            name="password"
+            type="password"
+            id="exampleInputPassword1"
+            placeholder="Enter your password"
+            pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
+            title="The password must contain only Latin letters (both upper and lower case), numbers and other symbols"
+            required
+          />
         </div>
         <button type="submit">Register</button>
       </form>

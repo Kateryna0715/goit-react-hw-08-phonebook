@@ -1,11 +1,10 @@
-const { Title } = require('./HomePage.styled');
+const { Title, TitleContainer } = require('./HomePage.styled');
 
 const HomePage = () => {
   return (
-    <Title>
-      Welcome to PHONEBOOK
-      <span style={{ fontSize: '52px', fontStyle: 'normal' }}> 😄</span>
-    </Title>
+    <TitleContainer>
+      <Title>Welcome to PHONEBOOK 😄</Title>
+    </TitleContainer>
   );
 };
 

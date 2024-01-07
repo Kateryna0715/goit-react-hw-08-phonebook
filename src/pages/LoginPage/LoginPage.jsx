@@ -11,6 +11,7 @@ const LoginPage = () => {
   useEffect(() => {
     isLoggedIn && navigate('/');
   }, [isLoggedIn, navigate]);
+
   return <FormLogin />;
 };
 

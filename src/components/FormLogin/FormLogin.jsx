@@ -17,11 +17,11 @@ const FormLogin = () => {
         password,
       })
     );
+
     form.reset();
   };
   return (
     <div
-      className="card p-5 mx-auto"
       style={{
         width: 500,
         backgroundColor: '#ffffff',
@@ -42,21 +42,32 @@ const FormLogin = () => {
           go home
         </Link>
         <div>
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="inputEmail">Email address</label>
           <input
             type="email"
             name="email"
-            id="exampleInputEmail1"
+            id="inputEmail"
             aria-describedby="emailHelp"
-            autocomplete="on"
+            placeholder="Enter your email address"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email address"
+            required
           />
           <div id="emailHelp">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div>
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input name="password" type="password" id="exampleInputPassword1" />
+          <label htmlFor="inputPassword">Password</label>
+          <input
+            name="password"
+            type="password"
+            id="inputPassword"
+            placeholder="Enter your password"
+            pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
+            title="The password must contain only Latin letters (both upper and lower case), numbers and other symbols"
+            required
+          />
         </div>
         <button type="submit">Login</button>
       </form>
