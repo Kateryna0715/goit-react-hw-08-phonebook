@@ -7,7 +7,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  background: linear-gradient(
+      rgba(173, 169, 169, 0.2),
+      rgba(173, 169, 169, 0.2)
+    ),
     url('https://static.vecteezy.com/system/resources/previews/009/207/072/large_2x/conceptual-office-table-or-office-desk-top-view-background-free-photo.jpg')
       50% / cover no-repeat fixed;
 }

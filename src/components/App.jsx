@@ -49,7 +49,7 @@ const App = () => {
         <Route
           path="register"
           element={
-            <PublicRoute>
+            <PublicRoute redirectTo="/contacts">
               <RegistrationPage />
             </PublicRoute>
           }

@@ -3,7 +3,7 @@ import CSS from './index.module.css';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
-const Header = () => {
+const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -28,4 +28,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;

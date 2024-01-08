@@ -1,9 +1,27 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { register } from '../../redux/auth/operations';
+import {
+  FormContainer,
+  FormTitle,
+  InputLabel,
+  InputField,
+  SubmitButton,
+  ButtonLink,
+  PasswordToggleContainer,
+  PasswordInputField,
+  PasswordToggleIcon,
+} from './FormRegistration.styled';
+import { useState } from 'react';
 
 const FormRegistration = () => {
   const dispatch = useDispatch();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(prevShowPassword => !prevShowPassword);
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -24,70 +42,57 @@ const FormRegistration = () => {
   };
 
   return (
-    <div
-      style={{
-        width: 500,
-        backgroundColor: '#ffffff',
-        marginBottom: '12px',
-        margin: '0 auto',
-        padding: '20px',
-      }}
-    >
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-        }}
-      >
-        <Link type="button" to="/">
-          go home
-        </Link>
-        <div>
-          <label htmlFor="inputEmail">Email address</label>
-          <input
-            type="email"
-            name="email"
-            id="inputEmail"
-            aria-describedby="emailHelp"
-            placeholder="Enter your email address"
-            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-            title="Please enter a valid email address"
-            required
-          />
-          <div id="emailHelp">
-            We'll never share your email with anyone else.
-          </div>
-        </div>
-        <div>
-          <label htmlFor="inputName">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="inputName"
-            placeholder="Enter your name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            name="password"
-            type="password"
-            id="exampleInputPassword1"
+    <FormContainer>
+      <form onSubmit={handleSubmit}>
+        <FormTitle>Register</FormTitle>
+        {/* <Link to="/">
+          <ButtonLink type="button"> Go home </ButtonLink>
+        </Link> */}
+
+        <InputLabel htmlFor="name">Name</InputLabel>
+        <InputField
+          type="text"
+          id="name"
+          placeholder="Enter your name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer"
+          autoComplete="off"
+          required
+        />
+
+        <InputLabel htmlFor="email">Email</InputLabel>
+        <InputField
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+          title="Please enter a valid email address"
+          autoComplete="off"
+          required
+        />
+
+        <InputLabel htmlFor="password">Password</InputLabel>
+        <PasswordToggleContainer>
+          <PasswordInputField
+            type={showPassword ? 'text' : 'password'}
+            id="password"
             placeholder="Enter your password"
-            pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
-            title="The password must contain only Latin letters (both upper and lower case), numbers and other symbols"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            title="Password must contain at least eight or more characters (one number, one uppercase and lowercase letter)"
+            autoComplete="off"
             required
           />
-        </div>
-        <button type="submit">Register</button>
+          <PasswordToggleIcon onClick={handleTogglePassword}>
+            {showPassword ? '🙈' : '👁️'}
+          </PasswordToggleIcon>
+        </PasswordToggleContainer>
+
+        <SubmitButton>Register</SubmitButton>
+        <Link to="/login">
+          <ButtonLink>Already have an account? Login</ButtonLink>
+        </Link>
       </form>
-      <Link to="/login">Login</Link>
-    </div>
+    </FormContainer>
   );
 };
 
