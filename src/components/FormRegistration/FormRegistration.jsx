@@ -65,7 +65,7 @@ const FormRegistration = () => {
           type="email"
           id="email"
           placeholder="Enter your email address"
-          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+          pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           title="Please enter a valid email address"
           autoComplete="off"
           required
@@ -77,7 +77,7 @@ const FormRegistration = () => {
             type={showPassword ? 'text' : 'password'}
             id="password"
             placeholder="Enter your password"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
             title="Password must contain at least eight or more characters (one number, one uppercase and lowercase letter)"
             autoComplete="off"
             required

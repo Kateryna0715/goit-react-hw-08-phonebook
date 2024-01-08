@@ -7,18 +7,9 @@ const handleFulfilled = (state, action) => {
   state.isLoggedIn = true;
 };
 
-const handlePending = state => {
-  state.isLoading = true;
-};
-
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-};
-
 const initialState = {
   user: { name: null, email: null },
   token: null,
-
   isLoggedIn: false,
   isRefreshing: false,
 };
@@ -29,11 +20,9 @@ const authSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, handleFulfilled)
-      .addCase(register.pending, handlePending)
-      .addCase(register.rejected, handleRejected)
+
       .addCase(logIn.fulfilled, handleFulfilled)
-      .addCase(logIn.pending, handlePending)
-      .addCase(logIn.rejected, handleRejected)
+
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
