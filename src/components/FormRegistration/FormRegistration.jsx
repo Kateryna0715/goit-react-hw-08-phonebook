@@ -55,7 +55,7 @@ const FormRegistration = () => {
           id="name"
           placeholder="Enter your name"
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer"
+          title="Name may contain only letters, apostrophe, dash and spaces"
           autoComplete="off"
           required
         />
@@ -77,8 +77,8 @@ const FormRegistration = () => {
             type={showPassword ? 'text' : 'password'}
             id="password"
             placeholder="Enter your password"
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            title="Password must contain at least eight or more characters (one number, one uppercase and lowercase letter)"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$"
+            title="Password must contain at least seven or more characters (one number, one uppercase and lowercase letter)"
             autoComplete="off"
             required
           />

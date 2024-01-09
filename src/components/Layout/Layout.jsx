@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div style={{ maxWidth: '100%', margin: '0 auto' }}>
+    <div>
       <AppBar />
       <Suspense fallback={<Loader />}>
         <Outlet />

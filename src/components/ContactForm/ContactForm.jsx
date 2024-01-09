@@ -29,8 +29,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={CSS.formContainer}>
+    <div className={CSS.formContainer}>
+      <form onSubmit={handleSubmit} className={CSS.contactForm}>
+        {/* <div> */}
         <label htmlFor="inputName" className={CSS.formLabel}>
           Name
         </label>
@@ -58,8 +59,9 @@ const ContactForm = () => {
         <button type="submit" className={CSS.btn}>
           Add contact
         </button>
-      </div>
-    </form>
+        {/* </div> */}
+      </form>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { logIn } from '../../redux/auth/operations';
 import {
@@ -12,7 +13,6 @@ import {
   PasswordInputField,
   PasswordToggleIcon,
 } from '../FormRegistration/FormRegistration.styled';
-import { useState } from 'react';
 
 const FormLogin = () => {
   const dispatch = useDispatch();
@@ -64,8 +64,8 @@ const FormLogin = () => {
             type={showPassword ? 'text' : 'password'}
             id="password"
             placeholder="Enter your password"
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            title="Password must contain at least eight or more characters (one number, one uppercase and lowercase letter)"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$"
+            title="Password must contain at least seven or more characters (one number, one uppercase and lowercase letter)"
             autoComplete="off"
             required
           />

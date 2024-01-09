@@ -8,11 +8,11 @@ import Loader from './Loader/Loader';
 import PrivateRoute from 'guards/PrivateRoute';
 import PublicRoute from 'guards/PublicRoute';
 
-const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegistrationPage = lazy(() =>
-  import('pages/RegistrationPage/RegistrationPage')
+  import('../pages/RegistrationPage/RegistrationPage')
 );
 
 const App = () => {
@@ -31,27 +31,29 @@ const App = () => {
         <Route index element={<HomePage />} />
 
         <Route
-          path="contacts"
+          path="/register"
           element={
-            <PrivateRoute redirectTo="/login">
-              <ContactsPage />
-            </PrivateRoute>
+            <PublicRoute redirectTo="/contacts">
+              <RegistrationPage />
+            </PublicRoute>
           }
         />
+
         <Route
-          path="login"
+          path="/login"
           element={
             <PublicRoute redirectTo="/contacts">
               <LoginPage />
             </PublicRoute>
           }
         />
+
         <Route
-          path="register"
+          path="/contacts"
           element={
-            <PublicRoute redirectTo="/contacts">
-              <RegistrationPage />
-            </PublicRoute>
+            <PrivateRoute redirectTo="/login">
+              <ContactsPage />
+            </PrivateRoute>
           }
         />
 

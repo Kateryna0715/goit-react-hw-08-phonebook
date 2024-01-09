@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const setToken = token => {
@@ -60,8 +61,8 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setToken(persistedToken);
-      const res = await axios.get('/users/current');
-      return res.data;
+      const { data } = await axios.get('/users/current');
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

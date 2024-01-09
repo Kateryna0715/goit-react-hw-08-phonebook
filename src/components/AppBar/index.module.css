@@ -5,7 +5,9 @@
   background-color: rgb(227, 247, 246, 0.6);
   padding: 16px;
   display: flex;
+  gap: 20px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  max-width: 100%;
 }
