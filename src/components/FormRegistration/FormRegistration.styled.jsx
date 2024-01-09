@@ -87,4 +87,5 @@ export const PasswordToggleIcon = styled.span`
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 `;
