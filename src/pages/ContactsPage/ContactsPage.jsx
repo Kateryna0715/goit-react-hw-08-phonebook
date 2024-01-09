@@ -37,12 +37,10 @@ const ContactsPage = () => {
           Oops! {error}. Please refresh the page and try again
         </h1>
       )}
-
+      {isLoading && <Loader />}
       <Section title="Phonebook">
         <ContactForm />
       </Section>
-
-      {isLoading && <Loader />}
 
       <Section title="Contacts">
         {contacts.length > 0 ? (
