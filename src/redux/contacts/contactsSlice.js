@@ -45,8 +45,6 @@ const contactsSlice = createSlice({
       })
       .addCase(logOut.fulfilled, state => {
         state.contacts = [];
-        // state.error = null;
-        // state.isLoading = false;
       })
       .addMatcher(action => action.type.endsWith('pending'), handlePending)
       .addMatcher(action => action.type.endsWith('fulfilled'), handleFulfilled)
