@@ -20,8 +20,8 @@ export const register = createAsyncThunk(
       toast.success('Registration was successful!');
       return data;
     } catch (e) {
-      toast.error(e.message);
-      // return thunkAPI.rejectWithValue(e.message);
+      toast.error(`Registration failed. ${e.message}`);
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
@@ -34,8 +34,8 @@ export const logIn = createAsyncThunk(
       toast.success('Login successfully!');
       return data;
     } catch (e) {
-      toast.error(e.message);
-      // return  thunkAPI.rejectWithValue(e.message);
+      toast.error(`LogIn failed. ${e.message}`);
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

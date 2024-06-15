@@ -1,9 +1,10 @@
 import ContactForm from '../../components/ContactForm/ContactForm';
-import Section from '../../components/Section/Section';
+import Title from '../../components/Title/Title';
 import ContactList from '../../components/ContactList/ContactList';
 import Filter from '../../components/Filter/Filter';
 import Notification from '../../components/Notification/Notification';
 import Loader from '../../components/Loader/Loader';
+import Container from 'components/Container/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectContacts,
@@ -24,7 +25,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Container>
       {error && (
         <h1
           style={{
@@ -38,21 +39,19 @@ const ContactsPage = () => {
         </h1>
       )}
       {isLoading && <Loader />}
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
+      <Title title="Phonebook" />
+      <ContactForm />
 
-      <Section title="Contacts">
-        {contacts.length > 0 ? (
-          <>
-            <Filter />
-            <ContactList />
-          </>
-        ) : (
-          <Notification message="There is no added contacts" />
-        )}
-      </Section>
-    </>
+      <Title title="Contacts" />
+      {contacts.length > 0 ? (
+        <>
+          <Filter />
+          <ContactList />
+        </>
+      ) : (
+        <Notification message="There is no added contacts" />
+      )}
+    </Container>
   );
 };
 
